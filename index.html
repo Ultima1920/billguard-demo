@@ -637,23 +637,25 @@
           <div class="lines"></div>
           <div class="visual-inner">
             <div
-              class="pill"
-              id="pill"
-              ondragover="handleDragOver(event)"
-              ondragleave="handleDragLeave(event)"
-              ondrop="handleDrop(event)"
-            >
-              <div class="pill-icon">
-                <i data-lucide="file-text"></i>
-              </div>
-              <div class="pill-text" id="pill-text">
-                <span>Drop your bill</span> or click to select an image
-              </div>
-              <div class="pill-cta">
-                <i data-lucide="play"></i>
-              </div>
-            </div>
-            <input id="file-input" type="file" accept="image/*" onchange="handleFile(event)" />
+  class="pill"
+  id="pill"
+  ondragover="handleDragOver(event)"
+  ondragleave="handleDragLeave(event)"
+  ondrop="handleDrop(event)"
+>
+  <div onclick="document.getElementById('file-input').click()" style="display:flex;align-items:center;gap:0.75rem;flex:1;cursor:pointer;">
+    <div class="pill-icon">
+      <i data-lucide="file-text"></i>
+    </div>
+    <div class="pill-text" id="pill-text">
+      <span>Drop your bill</span> or click to select an image
+    </div>
+  </div>
+  <div class="pill-cta" onclick="event.stopPropagation(); analyzeBill();" title="Analyze">
+    <i data-lucide="play"></i>
+  </div>
+</div>
+<input id="file-input" type="file" accept="image/*" onchange="handleFile(event)" />
           </div>
         </section>
 
